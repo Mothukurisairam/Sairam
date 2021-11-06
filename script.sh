@@ -1,0 +1,6 @@
+#!/bin/bash
+
+
+adad
+ahdhg
+
