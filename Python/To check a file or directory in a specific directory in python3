@@ -1,0 +1,19 @@
+#To check a file or directory in a specific directory in python3
+
+# First we need to import os in python3
+import os
+
+# Defining directory in to python
+directory_name=<directory name under the current directory>
+
+#  Pass the file name in to "for" loop. It helps to redirect all the files in the specific directory
+for name in os.listdir(directory_name):
+
+# Join file names and directory name in to one variable
+fullname=os.path.join(directory_name,name)
+
+# Taking the if condition. if it is directory it print it is a directory. or else it print it is  file.
+ if os.path.isdir(fullname):
+  print ("{} is a directory".format(fullname))
+ else:
+  print ("{} is a file".format(fullname))
