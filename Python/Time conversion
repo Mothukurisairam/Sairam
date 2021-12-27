@@ -1,0 +1,37 @@
+# Convert time to seconds
+
+#!/usr/bin/env python3
+
+def convert_to_seconds(hours,minutes,seconds):
+	return hours*3600+minutes*60+seconds
+
+hours = int(input("Enter the number of hours :"))
+minutes = int(input("Enter the number of minutes :"))
+seconds = int(input("Enter the number of seconds :"))
+
+print("Total seconds are {}".format(convert_to_seconds(hours, minutes, seconds)))
+
+# Convert time to minutes
+#!/usr/bin/env python3
+
+def convert_to_minutes(hours,minutes,seconds):
+  return hours*60+minutes+seconds/60
+  
+ hours = int(input("Enter the number of hours :"))
+ minutes = int(input("Enter the number of minutes :"))
+ seconds = int(input("Enter the number of seconds :"))
+ 
+ print ("Total minutes are {}". format(convert_to_minutes(hours, minutes, seconds)))
+ 
+ # Convert time to hours
+#!/usr/bin/env python3
+
+def convert_to_hours(hours,minutes,seconds):
+  return hours+minutes/60+seconds/3600
+  
+ hours = int(input("Enter the number of hours :"))
+ minutes = int(input("Enter the number of minutes :"))
+ seconds = int(input("Enter the number of seconds :"))
+ 
+ print ("Total minutes are {}". format(convert_to_hours(hours, minutes, seconds)))
+ 
