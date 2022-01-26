@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#For displaying the server uptime
+echo "Uptime                               = `uptime | sed 's/.*up \([^,]*\), .*/\1/'`"
+
+#for displaying the Last reboot time
+echo "Last reboot time                     = `who -b | awk '{print $3,$4}'`"
+
+#for displaying the Last reboot time
+echo "Last 10 installed packages with date = 'grep installed /var/log/dpkg.log'"
+
+#for displaying the OS version
+echo "OS Version                           = `lsb_release -d | cut -f2`"
+
+#for displaying the Kernel version
+echo "Kernel Version                       = `uname -r`"
+
+#for displaying the CPU Virtual cores
+echo "CPU Virtual Cores                    = `cat /proc/cpuinfo | grep processor | wc -l`"
+
+#for displaying the CPU Clock speed
+echo "Clock Speed                          = `cat /proc/cpuinfo | grep MHz | cut -d ' ' -f 3 | uniq`"
+
+#for displaying the CPU Architecture
+echo "CPU Architecture                     = `lscpu | grep -i Archi | cut -d : -f 2`"
+
+#for displaying the Disk space used
+echo "Disk Space Used                      = `df -h / | awk '{ a = $4 } END { print a }'`"
+
+#for displaying the RAM
+echo "RAM                                  = `grep MemTotal /proc/meminfo | cut -d : -f 2`"
+
+#for displaying the DISK Mounted/unmounted volumes, type,storage
+echo "DISK Mounted/unmounted volumes, type,storage ="
+echo "$(tput setaf 2) Disk - Mounted/Unmounted volumes, type, storage : $(tput sgr0)"  && df -aTH
+
+# Networking - OS Firewall (Allowed Ports & Protocols)
+echo "$(tput setaf 2) Networking - OS Firewall (Allowed Ports & Protocols) :  $(tput sgr0)"  && ufw status verbose
+
+
+~                                                                                                               
