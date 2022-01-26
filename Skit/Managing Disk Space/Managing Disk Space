@@ -1,0 +1,25 @@
+#!/bin/bash
+
+echo -n "enter file name to save log files"
+read New_file_name
+
+number = $1
+if ((number >= 10 && number <= 100));{
+then
+        Hours_to_minutes= $number * 60
+        find -mmin -$Hours_to_ninutes | grep *wav >> $New_file_name
+        input=$New_file_name
+        while IFS= read -r line
+        do
+                sudo rm -r $line
+        done<$New_file_name
+}
+else {
+        find -mmin -2400 | grep *wav >> $New_file_name
+        input=$New_file_name
+        while IFS= read -r line
+        do
+                sudo rm -r $line
+        done<$New_file_name
+fi
+}
