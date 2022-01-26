@@ -17,7 +17,7 @@ then
 else {
         find -mmin -2400 | grep *wav >> $New_file_name
         input=$New_file_name
-        while IFS= read -r line
+        while IFS= read -r $line
         do
                 sudo rm -r $line
         done<$New_file_name
